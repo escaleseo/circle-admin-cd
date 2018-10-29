@@ -9,11 +9,8 @@ echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
 gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
 gcloud --quiet config set project escale-os
 
-# Restore workspace
-set -exu
-mv ${WORKSPACE} .
-
 # Copy distribution
+set -exu
 mv ${WORKSPACE} ${VERSION}
 gsutil cp -r ${VERSION} gs://escale-admin-ui/${PROJECT_NAME}/
 
