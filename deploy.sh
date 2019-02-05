@@ -12,8 +12,8 @@ gcloud --quiet config set project escale-os
 # Copy distribution
 set -exu
 mv ${WORKSPACE} ${VERSION}
-gsutil cp -r ${VERSION} gs://escale-admin-ui/${PROJECT_NAME}/
+gsutil cp -r ${VERSION} gs://escale-admin-sp/${PROJECT_NAME}/
 
 # Upload version reference
 echo ${VERSION} > ${TAG}
-gsutil cp ${TAG} gs://escale-admin-ui/${PROJECT_NAME}/
+gsutil cp ${TAG} gs://escale-admin-sp/${PROJECT_NAME}/
